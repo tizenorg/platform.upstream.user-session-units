@@ -9,6 +9,7 @@ Source0:	http://foo-projects.org/~sofar/%{name}/%{name}-%{version}.tar.gz
 
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:  xorg-launch-helper
+BuildRequires:  pkgconfig(dbus-1)
 
 %description
 user-session-units
