@@ -8,6 +8,7 @@ URL:		http://foo-projects.org/~sofar/%{name}
 Source0:	http://foo-projects.org/~sofar/%{name}/%{name}-%{version}.tar.gz
 
 BuildRequires:	pkgconfig(systemd)
+BuildRequires:  xorg-launch-helper
 
 %description
 user-session-units
