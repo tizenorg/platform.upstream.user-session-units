@@ -10,10 +10,24 @@ Source0:	http://foo-projects.org/~sofar/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:  xorg-launch-helper
 BuildRequires:  pkgconfig(dbus-1)
-BuildRequires:  enlightenment
 
 %description
 user-session-units
+
+
+%package gnome
+Summary:	Gnome user session units
+Group:		Desktop
+
+%description gnome
+Gnome user session units.
+
+%package enlightenment
+Summary:	Enlightenment user session units
+Group:		Desktop
+
+%description enlightenment
+Enlightenment user session units.
 
 %prep
 %setup -q
@@ -21,7 +35,8 @@ user-session-units
 
 %build
 %autogen
-%configure
+%configure --enable-gnome --enable-enlightenment
+
 make %{?_smp_mflags}
 
 
@@ -30,6 +45,16 @@ make %{?_smp_mflags}
 
 
 %files
-%{_unitdir_user}/*
 %{_unitdir}/*
+%{_unitdir_user}/dbus.socket
+%{_unitdir_user}/dbus.service
 
+%files enlightenment
+%{_unitdir_user}/e17.target
+%{_unitdir_user}/enlightenment.service
+%{_unitdir_user}/e17.target.wants/enlightenment.service
+
+%files gnome
+%{_unitdir_user}/gnome.target
+%{_unitdir_user}/gnome-session.service
+%{_unitdir_user}/gnome.target.wants/gnome-session.service
