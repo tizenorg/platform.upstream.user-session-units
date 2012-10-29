@@ -18,6 +18,7 @@ user-session-units
 %package gnome
 Summary:	Gnome user session units
 Group:		Desktop
+Requires:	user-session-units
 
 %description gnome
 Gnome user session units.
@@ -25,6 +26,7 @@ Gnome user session units.
 %package enlightenment
 Summary:	Enlightenment user session units
 Group:		Desktop
+Requires:	user-session-units
 
 %description enlightenment
 Enlightenment user session units.
