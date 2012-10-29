@@ -34,23 +34,30 @@ AC_SUBST(DBUSDAEMONDIR)
 AC_SUBST(DBUSPREFIX)
 
 # these are the desktops:
-AC_CHECK_PROG([E_PROG], [enlightenment_start], [`which enlightenment_start`], [], [], [])
+# enlightenment
+AC_ARG_ENABLE(enlightenment, [  --enable-enlightenment], enable_enlightenment=yes, )
+AC_CHECK_PROG([E_PROG], [enlightenment_start], [`which enlightenment_start`], ['/usr/bin/enlightenment_start'], [], [])
 AC_SUBST(E_PROG)
-AM_CONDITIONAL([HAVE_E], [test -n "$E_PROG"])
+AM_CONDITIONAL(HAVE_E, test x$enable_enlightenment = xyes)
 
-AC_CHECK_PROG([XFCE_PROG], [xfce4-session], [`which xfce4-session`], [], [], [])
-AC_CHECK_PROG([XFWM_PROG], [xfwm4], [`which xfwm4`], [], [], [])
+# xfce
+AC_ARG_ENABLE(xfce, [  --enable-xfce],enable_xfce=yes, )
+AM_CONDITIONAL(HAVE_XFCE, test x$enable_xfce = xyes)
+AC_CHECK_PROG([XFCE_PROG], [xfce4-session], [`which xfce4-session`], ['/usr/bin/xfce4-session'], [], [])
+AC_CHECK_PROG([XFWM_PROG], [xfwm4], [`which xfwm4`], ['/usr/bin/xfwm4'], [], [])
 AC_SUBST(XFCE_PROG)
 AC_SUBST(XFWM_PROG)
-AM_CONDITIONAL([HAVE_XFCE], [test -n "$XFCE_PROG"])
+
+# xbmc
 
 AC_CHECK_PROG([XBMC_PROG], [xbmc-standalone], [`which xbmc-standalone`], [], [], [])
 AC_SUBST(XBMC_PROG)
 AM_CONDITIONAL([HAVE_XBMC], [test -n "$XBMC_PROG"])
 
-AC_CHECK_PROG([GNOME_PROG], [gnome-session], [`which gnome-session`], [], [], [])
+AC_ARG_ENABLE(gnome, [  --enable-gnome], enable_gnome=yes, )
+AM_CONDITIONAL(HAVE_GNOME, test x$enable_gnome = xyes)
+AC_CHECK_PROG([GNOME_PROG], [gnome-session], [`which gnome-session`], ['/usr/bin/gnome-session'], [], [])
 AC_SUBST(GNOME_PROG)
-AM_CONDITIONAL([HAVE_GNOME], [test -n "$GNOME_PROG"])
 
 AC_CHECK_PROG([KDE_PROG], [startkde], [`which startkde`], [], [], [])
 AC_SUBST(KDE_PROG)
