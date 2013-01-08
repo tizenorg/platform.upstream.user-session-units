@@ -48,8 +48,8 @@ make %{?_smp_mflags}
 
 %files
 %{_unitdir}/*
-%{_unitdir_user}/dbus.socket
-%{_unitdir_user}/dbus.service
+%exclude %{_unitdir_user}/dbus.socket
+%exclude %{_unitdir_user}/dbus.service
 
 %files enlightenment
 %{_unitdir_user}/e17.target
