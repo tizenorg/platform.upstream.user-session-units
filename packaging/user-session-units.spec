@@ -1,9 +1,9 @@
 Name:		user-session-units
 Version:	8
 Release:	1
-Summary:	user-session-units
+Summary:	Systemd session units
 Group:		System/Base
-License:	GPLv2
+License:	GPL-2.0
 URL:		http://foo-projects.org/~sofar/%{name}
 Source0:	http://foo-projects.org/~sofar/%{name}/%{name}-%{version}.tar.gz
 
@@ -12,12 +12,11 @@ BuildRequires:  xorg-launch-helper
 BuildRequires:  pkgconfig(dbus-1)
 
 %description
-user-session-units
-
+Systemd user session units.
 
 %package gnome
 Summary:	Gnome user session units
-Group:		Desktop
+Group:		System/Base
 Requires:	user-session-units
 
 %description gnome
@@ -25,7 +24,7 @@ Gnome user session units.
 
 %package enlightenment
 Summary:	Enlightenment user session units
-Group:		Desktop
+Group:		System/Base
 Requires:	user-session-units
 
 %description enlightenment
