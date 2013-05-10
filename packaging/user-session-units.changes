@@ -1,3 +1,6 @@
+* Fri May 10 2013 Anas Nashif <anas.nashif@intel.com> cfd8af5
+- Update to v8
+
 * Mon Jan 07 2013 Anas Nashif <anas.nashif@intel.com> 5201bab
 - Exclude dbus units for user sessions, they are not part of dbus
 
