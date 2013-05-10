@@ -1,5 +1,5 @@
 Name:		user-session-units
-Version:	6
+Version:	8
 Release:	1
 Summary:	user-session-units
 Group:		System/Base
