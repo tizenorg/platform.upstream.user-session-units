@@ -46,6 +46,7 @@ make %{?_smp_mflags}
 
 
 %files
+%license COPYING
 %{_unitdir}/*
 %exclude %{_unitdir_user}/dbus.socket
 %exclude %{_unitdir_user}/dbus.service
