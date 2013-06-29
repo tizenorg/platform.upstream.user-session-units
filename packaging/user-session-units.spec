@@ -6,6 +6,7 @@ Group:		System/Base
 License:	GPL-2.0
 URL:		http://foo-projects.org/~sofar/%{name}
 Source0:	http://foo-projects.org/~sofar/%{name}/%{name}-%{version}.tar.gz
+Source1001: 	user-session-units.manifest
 
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:  xorg-launch-helper
@@ -32,6 +33,7 @@ Enlightenment user session units.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 
 %build
@@ -46,17 +48,20 @@ make %{?_smp_mflags}
 
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %{_unitdir}/*
 %exclude %{_unitdir_user}/dbus.socket
 %exclude %{_unitdir_user}/dbus.service
 
 %files enlightenment
+%manifest %{name}.manifest
 %{_unitdir_user}/e17.target
 %{_unitdir_user}/enlightenment.service
 %{_unitdir_user}/e17.target.wants/enlightenment.service
 
 %files gnome
+%manifest %{name}.manifest
 %{_unitdir_user}/gnome.target
 %{_unitdir_user}/gnome-session.service
 %{_unitdir_user}/gnome.target.wants/gnome-session.service
