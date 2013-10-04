@@ -7,7 +7,7 @@
 
 [Unit]
 Description=User Manager for %u
-After=systemd-user-sessions.service
+After=systemd-user-sessions.service dbus.service
 # This is needed for folks running Xorg on vt/1
 Conflicts=getty@tty1.service
 
