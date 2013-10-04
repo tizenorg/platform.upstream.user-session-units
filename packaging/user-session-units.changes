@@ -1,3 +1,6 @@
+* Fri Oct 04 2013 Rusty Lynch <rusty.lynch@intel.com> accepted/tizen/20130913.063229@a7c406c
+- Start user-session After dbus.service. Fixes: TIVI-1034
+
 * Sat May 11 2013 Anas Nashif <anas.nashif@intel.com> submit/tizen/20130510.141858@54e7ff5
 - Set license using %license
 
