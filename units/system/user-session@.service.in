@@ -18,6 +18,7 @@ PAMName=login
 ControlGroup=%R/user/%u/shared cpu:/ memory:/
 ControlGroupModify=yes
 Type=notify
+StandardInput=tty
 TTYPath=/dev/tty1
 ExecStart=-@SYSTEMDUTILDIR@/systemd --user
 Environment=DISPLAY=:0
