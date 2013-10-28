@@ -1,0 +1,8 @@
+Code-Review+2: Patrick McCarty <patrick.mccarty@linux.intel.com>
+Code-Review+2: Rusty Lynch <rusty.lynch@intel.com>
+Verified+1: Rusty Lynch <rusty.lynch@intel.com>
+Submitted-by: Rusty Lynch <rusty.lynch@intel.com>
+Submitted-at: Mon, 28 Oct 2013 10:50:52 -0700
+Reviewed-on: https://review.tizen.org/gerrit/11482
+Project: platform/upstream/user-session-units
+Branch: refs/heads/tizen
