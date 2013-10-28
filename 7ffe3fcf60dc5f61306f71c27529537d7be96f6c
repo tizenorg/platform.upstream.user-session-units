@@ -1,0 +1,13 @@
+Code-Review+2: Auke Kok <auke-jan.h.kok@intel.com>
+Code-Review+1: Patrick McCarty <patrick.mccarty@linux.intel.com>
+Code-Review+1: william douglas <william.douglas@intel.com>
+Code-Review+2: Rusty Lynch <rusty.lynch@intel.com>
+Code-Review+1: Ossama Othman <ossama.othman@intel.com>
+Verified+1: Ossama Othman <ossama.othman@intel.com>
+Code-Review+1: Jacek Pielaszkiewicz <j.pielaszkie@samsung.com>
+Code-Review+1: Karol Lewandowski <k.lewandowsk@samsung.com>
+Submitted-by: Rusty Lynch <rusty.lynch@intel.com>
+Submitted-at: Mon, 28 Oct 2013 10:01:10 -0700
+Reviewed-on: https://review.tizen.org/gerrit/11161
+Project: platform/upstream/user-session-units
+Branch: refs/heads/tizen
