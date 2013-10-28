@@ -1,3 +1,6 @@
+* Mon Oct 28 2013 Rusty Lynch <rusty.lynch@intel.com> submit/tizen/20131004.180841@7ffe3fc
+- TIVI-2021: Force STDIN to be connected to the user session tty.
+
 * Fri Oct 04 2013 Rusty Lynch <rusty.lynch@intel.com> accepted/tizen/20130913.063229@a7c406c
 - Start user-session After dbus.service. Fixes: TIVI-1034
 
