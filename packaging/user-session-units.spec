@@ -11,6 +11,8 @@ Source1001: 	user-session-units.manifest
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:  xorg-launch-helper
 BuildRequires:  pkgconfig(dbus-1)
+BuildRequires:  pam-devel
+BuildRequires:  pkgconfig(libsystemd-login)
 
 %description
 Systemd user session units.
@@ -50,6 +52,7 @@ make %{?_smp_mflags}
 %files
 %manifest %{name}.manifest
 %license COPYING
+%{_bindir}/user-session-launch
 %{_unitdir}/*
 %exclude %{_unitdir_user}/dbus.socket
 %exclude %{_unitdir_user}/dbus.service
