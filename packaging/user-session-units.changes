@@ -1,3 +1,7 @@
+* Wed Dec 18 2013 Patrick McCarty <patrick.mccarty@linux.intel.com> 36a044c
+- Add a new systemd service for starting logind sessions. This fixes numerous
+  bugs, including TIVI-2215, TIVI-2270, TIVI-2383, and TIVI-2217.
+
 * Mon Oct 28 2013 Rusty Lynch <rusty.lynch@intel.com> submit/tizen/20131004.180841@7ffe3fc
 - TIVI-2021: Force STDIN to be connected to the user session tty.
 
