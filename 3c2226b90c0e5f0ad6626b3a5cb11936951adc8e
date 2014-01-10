@@ -1,0 +1,11 @@
+Code-Review+2: Auke Kok <auke-jan.h.kok@intel.com>
+Code-Review+2: Patrick McCarty <patrick.mccarty@linux.intel.com>
+Code-Review+2: Brad Peters <brad.t.peters@intel.com>
+Verified+1: Brad Peters <brad.t.peters@intel.com>
+Code-Review+1: Juan Zhao
+Verified+1: wang fei <feix.w.wang@intel.com>
+Submitted-by: Brad Peters <brad.t.peters@intel.com>
+Submitted-at: Fri, 10 Jan 2014 14:02:38 -0800
+Reviewed-on: https://review.tizen.org/gerrit/14719
+Project: platform/upstream/user-session-units
+Branch: refs/heads/tizen
