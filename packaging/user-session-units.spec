@@ -9,7 +9,9 @@ Source0:	http://foo-projects.org/~sofar/%{name}/%{name}-%{version}.tar.gz
 Source1001: 	user-session-units.manifest
 
 BuildRequires:	pkgconfig(systemd)
+%if %{with x}
 BuildRequires:  xorg-launch-helper
+%endif
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pam-devel
 BuildRequires:  pkgconfig(libsystemd-login)
