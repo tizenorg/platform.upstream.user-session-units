@@ -8,6 +8,7 @@ License:	GPL-2.0
 URL:		http://foo-projects.org/~sofar/%{name}
 Source0:	http://foo-projects.org/~sofar/%{name}/%{name}-%{version}.tar.gz
 Source1001: 	user-session-units.manifest
+Source1002: 	user-session.pam
 
 BuildRequires:	pkgconfig(systemd)
 %if %{with x}
@@ -51,6 +52,9 @@ make %{?_smp_mflags}
 %install
 %make_install
 
+install -m 755 -d %{buildroot}%{_sysconfdir}/pam.d
+install -m 644 %{SOURCE1002} %{buildroot}%{_sysconfdir}/pam.d/user-session
+
 
 %files
 %manifest %{name}.manifest
@@ -59,6 +63,7 @@ make %{?_smp_mflags}
 %{_unitdir}/*
 %exclude %{_unitdir_user}/dbus.socket
 %exclude %{_unitdir_user}/dbus.service
+%{_sysconfdir}/pam.d/user-session
 
 %files enlightenment
 %manifest %{name}.manifest
