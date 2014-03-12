@@ -90,7 +90,7 @@ void setup_pam_session(char *seat, char *user)
 	pc.conv = pam_conversation_fn;
 	pc.appdata_ptr = NULL;
 
-	err = pam_start("login", user, &pc, &ph);
+	err = pam_start("user-session", user, &pc, &ph);
 
 	/* FIXME: do not hardcode the tty here; should check
 	 * first to see if it's already taken. */
