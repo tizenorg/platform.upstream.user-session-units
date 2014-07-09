@@ -1,14 +1,14 @@
 %bcond_with x
-Name:		user-session-units
-Version:	8
-Release:	1
-Summary:	Systemd session units
-Group:		System/Base
-License:	GPL-2.0
-URL:		http://foo-projects.org/~sofar/%{name}
-Source0:	http://foo-projects.org/~sofar/%{name}/%{name}-%{version}.tar.gz
-Source1001: 	user-session-units.manifest
-Source1002: 	user-session.pam
+Name:           user-session-units
+Version:        8
+Release:        0
+Summary:        Systemd session units
+Group:          System/Configuration
+License:        GPL-2.0
+URL:            http://foo-projects.org/~sofar/%{name}
+Source0:        http://foo-projects.org/~sofar/%{name}/%{name}-%{version}.tar.gz
+Source1001:     user-session-units.manifest
+Source1002:     user-session.pam
 
 BuildRequires:	pkgconfig(systemd)
 %if %{with x}
@@ -22,39 +22,33 @@ BuildRequires:  pkgconfig(libsystemd-login)
 Systemd user session units.
 
 %package gnome
-Summary:	Gnome user session units
-Group:		System/Base
-Requires:	user-session-units
+Summary:        Gnome user session units
+Group:          System/Configuration
+Requires:       user-session-units
 
 %description gnome
-Gnome user session units.
+Gnome user session units package.
 
 %package enlightenment
-Summary:	Enlightenment user session units
-Group:		System/Base
-Requires:	user-session-units
+Summary:        Enlightenment user session units
+Group:          System/Configuration
+Requires:       user-session-units
 
 %description enlightenment
-Enlightenment user session units.
+Enlightenment user session units package.
 
 %prep
 %setup -q
 cp %{SOURCE1001} .
 
-
 %build
-%autogen
-%configure --enable-gnome --enable-enlightenment
-
-make %{?_smp_mflags}
-
+%reconfigure --enable-gnome --enable-enlightenment
+%__make %{?_smp_mflags}
 
 %install
 %make_install
-
 install -m 755 -d %{buildroot}%{_sysconfdir}/pam.d
 install -m 644 %{SOURCE1002} %{buildroot}%{_sysconfdir}/pam.d/user-session
-
 
 %files
 %manifest %{name}.manifest
@@ -63,7 +57,7 @@ install -m 644 %{SOURCE1002} %{buildroot}%{_sysconfdir}/pam.d/user-session
 %{_unitdir}/*
 %exclude %{_unitdir_user}/dbus.socket
 %exclude %{_unitdir_user}/dbus.service
-%{_sysconfdir}/pam.d/user-session
+%config %{_sysconfdir}/pam.d/user-session
 
 %files enlightenment
 %manifest %{name}.manifest
