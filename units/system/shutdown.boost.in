@@ -1,0 +1,4 @@
+ExecStart=/usr/sbin/alsactl store
+ExecStart=/usr/lib/dracut/dracut-initramfs-restore
+ExecStart=/usr/lib/systemd/systemd-user-sessions stop
+
